@@ -48,7 +48,7 @@ class Migration(migrations.Migration):
             database_operations=[
                 migrations.AlterModelTable(
                     name='Address',
-                    table='address_address',
+                    table='lettings_address',
                 ),
             ],
             ),
@@ -64,7 +64,7 @@ class Migration(migrations.Migration):
             database_operations=[
                 migrations.AlterModelTable(
                     name='Letting',
-                    table='letting_letting',
+                    table='lettings_letting',
                 ),
             ],
         ),
@@ -80,7 +80,7 @@ class Migration(migrations.Migration):
             database_operations=[
                 migrations.AlterModelTable(
                     name='Profile',
-                    table='profile_profile',
+                    table='profiles_profile',
                 ),
             ],
         ),
