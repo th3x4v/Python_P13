@@ -10,10 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        # migrations.RemoveField(
-        #     model_name='letting',
-        #     name='address',
-        # ),
         migrations.SeparateDatabaseAndState(
             state_operations=[
             migrations.RemoveField(
@@ -23,10 +19,6 @@ class Migration(migrations.Migration):
             ],
             database_operations=[],
         ),
-        # migrations.RemoveField(
-        #     model_name='profile',
-        #     name='user',
-        # ),
         migrations.SeparateDatabaseAndState(
             state_operations=[
             migrations.RemoveField(
@@ -36,9 +28,6 @@ class Migration(migrations.Migration):
             ],
             database_operations=[],
         ),
-        # migrations.DeleteModel(
-        #     name='Address',
-        # ),
         migrations.SeparateDatabaseAndState(
             state_operations=[
                 migrations.DeleteModel(
@@ -52,9 +41,6 @@ class Migration(migrations.Migration):
                 ),
             ],
             ),
-        # migrations.DeleteModel(
-        #     name='Letting',
-        # ),
         migrations.SeparateDatabaseAndState(
             state_operations=[
                 migrations.DeleteModel(
@@ -68,9 +54,6 @@ class Migration(migrations.Migration):
                 ),
             ],
         ),
-        # migrations.DeleteModel(
-        #     name='Profile',
-        # ),
         migrations.SeparateDatabaseAndState(
             state_operations=[
                 migrations.DeleteModel(
