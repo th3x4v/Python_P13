@@ -9,3 +9,9 @@ urlpatterns = [
     path("", include("profiles.urls")),
     path('admin/', admin.site.urls),
 ]
+
+
+from django.conf.urls import handler404, handler500
+
+handler404 = 'oc_lettings_site.views.handler404'
+handler500 = 'oc_lettings_site.views.handler500'
