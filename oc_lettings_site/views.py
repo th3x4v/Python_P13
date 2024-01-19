@@ -1,4 +1,9 @@
 from django.shortcuts import render
+from django.http import HttpResponseServerError
+
+
+def view_that_raises_500(request):
+    raise HttpResponseServerError()
 
 
 def index(request):
