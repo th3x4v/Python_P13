@@ -1,8 +1,7 @@
 import pytest
 from django.urls import reverse
 from pytest_django.asserts import assertTemplateUsed
-from django.test import RequestFactory, Client
-from oc_lettings_site.views import handler500, handler404
+from django.test import Client
 
 
 @pytest.mark.django_db

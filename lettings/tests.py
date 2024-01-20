@@ -1,10 +1,7 @@
-# lettings/tests.py
-
 import pytest
 from django.test import Client
 from django.urls import reverse
 from lettings.models import Letting, Address
-from django.contrib.auth.models import User
 
 
 @pytest.mark.django_db

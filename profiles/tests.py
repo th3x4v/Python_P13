@@ -1,6 +1,6 @@
 import pytest
 from django.test import Client
-from django.urls import reverse, resolve
+from django.urls import reverse
 from profiles.models import Profile
 from django.contrib.auth.models import User
 
@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 @pytest.mark.django_db
 def test_index_view():
     client = Client()
-    test_user = User.objects.create_user(username="testuser", password="12345")
+    test_user = User.objects.create_user(username="testuser")
     Profile.objects.create(user=test_user)
 
     # Act
