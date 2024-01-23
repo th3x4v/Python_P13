@@ -1,6 +1,23 @@
 import os
-
 from pathlib import Path
+from sentry_sdk.integrations.django import DjangoIntegration
+import sentry_sdk
+from django.core.management.utils import get_random_secret_key
+
+# https://22641b8aef8958ea73fe55efa050446f@o4506476129681408.ingest.sentry.io/4506605297532928
+sentry_sdk.init(
+    dsn=os.getenv("SENTRY_DSN"),
+    integrations=[
+        DjangoIntegration(),
+    ],
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    traces_sample_rate=1.0,
+    # Set profiles_sample_rate to 1.0 to profile 100%
+    # of sampled transactions.
+    # We recommend adjusting this value in production.
+    profiles_sample_rate=1.0,
+)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,10 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
+# SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = []
 
@@ -116,3 +134,21 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "sentry": {
+            "level": "INFO",  # Set to INFO to capture INFO level logs
+            "class": "sentry_sdk.integrations.logging.SentryHandler",
+        },
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["sentry", "console"],
+        "level": "INFO",  # Set the overall logging level to INFO
+    },
+}
