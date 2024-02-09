@@ -36,7 +36,7 @@ jobs:
         password: dckr_pat_pihrxgFGWYiUkV_3UHPQBfw0mkA
     - name: Build and tag the Docker image
       run: |
-        IMAGE_ID=th3x4v/python_13
+        IMAGE_ID=th3x4v/python_p13
 
         # Build the image, tag it with the commit SHA
         docker build -t $IMAGE_ID:${GITHUB_SHA::8} . --platform=linux/amd64
