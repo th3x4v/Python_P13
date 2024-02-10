@@ -27,8 +27,9 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        pytest
         flake8
+        pytest
+        
 
     - name: Login to Docker Hub
       uses: docker/login-action@v2
