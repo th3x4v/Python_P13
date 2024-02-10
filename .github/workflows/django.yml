@@ -2,9 +2,9 @@ name: Django CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "**" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "**" ]
 
 jobs:
   build:
@@ -28,12 +28,15 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+        python manage.py flake8
 
     - name: Login to Docker Hub
       uses: docker/login-action@v2
       with:
         username: th3x4v
-        password: dckr_pat_pihrxgFGWYiUkV_3UHPQBfw0mkA
+        password: ${{ secrets.DOCKER_PASSWORD }} # dckr_pat_pihrxgFGWYiUkV_3UHPQBfw0mkA
+      if: github.ref == 'refs/heads/master'
+
     - name: Build and tag the Docker image
       run: |
         IMAGE_ID=th3x4v/python_p13
@@ -44,3 +47,4 @@ jobs:
 
         # Optionally: Push the image to a registry
         docker push $IMAGE_ID:new
+      if: github.ref == 'refs/heads/master'
