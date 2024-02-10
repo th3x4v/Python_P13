@@ -39,7 +39,8 @@ jobs:
         IMAGE_ID=th3x4v/python_p13
 
         # Build the image, tag it with the commit SHA
-        docker build --no-cache -t $IMAGE_ID:${GITHUB_SHA::8} . --platform=linux/amd64
+        # docker build --no-cache -t $IMAGE_ID:${GITHUB_SHA::8} . --platform=linux/amd64
+        docker build --no-cache -t $IMAGE_ID:new . --platform=linux/amd64
 
         # Optionally: Push the image to a registry
-        docker push $IMAGE_ID:${GITHUB_SHA::8}
+        docker push $IMAGE_ID:new
