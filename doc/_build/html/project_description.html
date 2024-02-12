@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Project Description &#8212; P13_OC_LETTINGS  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="installation_instructions.html" />
+    <link rel="prev" title="Overview" href="overview.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="project-description">
+<h1>Project Description<a class="headerlink" href="#project-description" title="Link to this heading">¶</a></h1>
+<section id="refactoring">
+<h2>Refactoring<a class="headerlink" href="#refactoring" title="Link to this heading">¶</a></h2>
+<p>The project undertakes significant improvements from its precursor, the Python-OC-Lettings-FR, which include:</p>
+<ul class="simple">
+<li><p><strong>Refactoring for Technical Debt</strong>: Key refactoring was performed to alleviate the technical debt, fostering a more maintainable and efficient codebase.</p></li>
+<li><p><strong>Linting Error Resolution</strong>: Adherence to coding standards was reinforced by resolving all linting errors.</p></li>
+<li><p><strong>Admin Site Model Normalization</strong>: Model names were normalized for pluralization consistency across the admin site.</p></li>
+<li><p><strong>Introduction of Modular Architecture</strong>: The application was split into three separate Django apps—<cite>lettings</cite>, <cite>profiles</cite>, and <cite>home</cite>—each encapsulating specific functionalities.</p></li>
+<li><p><strong>Django Project Refactor</strong>: <cite>oc_lettings_site</cite> was converted into a full-fledged Django project to enhance the organizational structure.</p></li>
+<li><p><strong>Comprehensive Testing Suite</strong>: A new suite of tests was created to ensure the reliability and stability of code changes.</p></li>
+</ul>
+</section>
+<section id="ci-cd-pipeline-implementation">
+<h2>CI/CD Pipeline Implementation<a class="headerlink" href="#ci-cd-pipeline-implementation" title="Link to this heading">¶</a></h2>
+<p>Automation of development processes has been achieved through a CI/CD pipeline, set up as follows:</p>
+<ul class="simple">
+<li><p><strong>Build and Test</strong>: With every new commit, a suite of linting checks and tests is executed.</p></li>
+<li><p><strong>Docker Containerization</strong>: Successful testing leads to the creation and pushing of a Docker image to DockerHub, this step being exclusive to the master branch.</p></li>
+<li><p><strong>Application Deployment</strong>: The final step in the pipeline is an automated deployment to Render, contingent on the successful Docker image push.</p></li>
+</ul>
+</section>
+<section id="monitoring-solutions">
+<h2>Monitoring Solutions<a class="headerlink" href="#monitoring-solutions" title="Link to this heading">¶</a></h2>
+<p>Application performance and error tracking are maintained vigilantly with the use of Sentry, ensuring high reliability and swift issue mitigation.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">P13_OC_LETTINGS</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Project Description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#refactoring">Refactoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ci-cd-pipeline-implementation">CI/CD Pipeline Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#monitoring-solutions">Monitoring Solutions</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="overview.html" title="previous chapter">Overview</a></li>
+      <li>Next: <a href="installation_instructions.html" title="next chapter">&lt;no title&gt;</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, th3x4v.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/project_description.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
