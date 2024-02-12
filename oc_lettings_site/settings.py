@@ -4,6 +4,9 @@ from sentry_sdk.integrations.django import DjangoIntegration
 import sentry_sdk
 from django.core.management.utils import get_random_secret_key
 
+print(os.getenv("SENTRY_DSN"))
+print(os.getenv("DOMAIN_NAME"))
+
 # https://22641b8aef8958ea73fe55efa050446f@o4506476129681408.ingest.sentry.io/4506605297532928
 sentry_sdk.init(
     dsn=os.getenv("SENTRY_DSN"),
@@ -33,7 +36,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", os.getenv("DOMAIN_NAME")]
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", f'{os.getenv("DOMAIN_NAME")}']
 
 
 # Application definition
