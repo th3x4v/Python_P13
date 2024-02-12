@@ -12,7 +12,6 @@ Welcome to P13_OC_LETTINGS's Documentation
    overview
    project_description
    installation_instructions
-   quick_start_guide
    technologies_and_languages
    database_structure_and_models
    api_interfaces
@@ -20,7 +19,7 @@ Welcome to P13_OC_LETTINGS's Documentation
 
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`

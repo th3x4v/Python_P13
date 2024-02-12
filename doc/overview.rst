@@ -27,11 +27,7 @@ The technical documentation covers various aspects of the project, including:
 
 - Project Description
 - Installation Instructions
-- Quick Start Guide
 - Technologies and Programming Languages
-- Database Structure and Data Models
-- API Interfaces
-- Usage Guide with Use Cases
 - Deployment and Application Management Procedures
 
 This documentation serves as a comprehensive resource for understanding and working with the P13_OC_LETTINGS project, promoting effective collaboration and smooth development processes.
