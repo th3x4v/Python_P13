@@ -15,8 +15,8 @@ build:
 sphinx:
   configuration: doc/conf.py
 
-# Specify Python dependencies
-python:
-  version: 3.11
-  install:
-    - requirements: docs/requirements.txt
+# # Specify Python dependencies
+# python:
+#   version: 3.11
+#   install:
+#     - requirements: docs/requirements.txt
