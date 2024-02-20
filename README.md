@@ -1,77 +1,116 @@
-## Résumé
+. image:: /_static/OC-Lettings.png
+   :align: center
 
-Site web d'Orange County Lettings
 
-## Développement local
+Overview
+========
 
-### Prérequis
+This documentation outlines the objectives, improvements, and technical details of the `Python Project P13 Repository <https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR>`_ . It aims to provide comprehensive guidance for developers, testers, and stakeholders involved in the project.
 
-- Compte GitHub avec accès en lecture à ce repository
+1. Project Objectives
+---------------------
+
+The project focuses on enhancing the existing web application with Web 2.0 features and improvements. Key objectives include:
+
+- Enhancing Modular Architecture: Restructuring the monolithic codebase into multiple distinct applications for improved flexibility, maintainability, and scalability.
+
+- Addressing Various Project Issues: Resolving linting errors, fixing pluralization errors, improving error handling, documenting code, and implementing comprehensive testing.
+
+- Implementing Error Monitoring with Sentry: Integrating Sentry for robust error monitoring and management, ensuring strategic placement of logs within the codebase.
+
+- CI/CD Pipeline and Deployment: Establishing a CI/CD pipeline for automated testing, containerization, and deployment to production environments.
+
+2. Technical Documentation ([link](https://python_p13.readthedocs.io/en/latest/))
+---------------------------------------------------------------------------------
+
+The technical documentation covers various aspects of the project, including:
+
+- Overview
+- Project Description
+- Installation Instructions
+- Get started
+- Technologies and Programming Languages
+- Database structure
+- API interfaces
+- Deployment and Application Management Procedures
+
+This documentation serves as a comprehensive resource for understanding and working with the P13_OC_LETTINGS project, promoting effective collaboration and smooth development processes.
+
+2. Installation Instructions
+----------------------------
+Installation Instructions
+=========================
+
+**Prerequisites**:
+
+- GitHub account with read access to this repository
 - Git CLI
 - SQLite3 CLI
-- Interpréteur Python, version 3.6 ou supérieure
+- Python interpreter, version 3.6 or higher
 
-Dans le reste de la documentation sur le développement local, il est supposé que la commande `python` de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
+Throughout the documentation for local development, it is assumed that the `python` command in your OS shell runs the above Python interpreter (unless a virtual environment is activated).
 
-### macOS / Linux
+- **Clone the repository**:
 
-#### Cloner le repository
+.. code-block:: bash
 
-- `cd /path/to/put/project/in`
-- `git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git`
+    cd /path/to/put/project/in
+    git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git
 
-#### Créer l'environnement virtuel
+- **Create the virtual environment**:
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `python -m venv venv`
-- `apt-get install python3-venv` (Si l'étape précédente comporte des erreurs avec un paquet non trouvé sur Ubuntu)
-- Activer l'environnement `source venv/bin/activate`
-- Confirmer que la commande `python` exécute l'interpréteur Python dans l'environnement virtuel
-`which python`
-- Confirmer que la version de l'interpréteur Python est la version 3.6 ou supérieure `python --version`
-- Confirmer que la commande `pip` exécute l'exécutable pip dans l'environnement virtuel, `which pip`
-- Pour désactiver l'environnement, `deactivate`
+.. code-block:: bash
 
-#### Exécuter le site
+    cd /path/to/Python-OC-Lettings-FR
+    python -m venv venv
+    apt-get install python3-venv  # If the above step encounters errors with a package not found on Ubuntu
+    source venv/bin/activate
+    which python  # Confirm the `python` command runs the Python interpreter in the virtual environment
+    python --version  # Confirm the Python interpreter version is 3.6 or higher
+    which pip  # Confirm the `pip` command runs the pip executable in the virtual environment
+    deactivate  # To deactivate the environment
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pip install --requirement requirements.txt`
-- `python manage.py runserver`
-- Aller sur `http://localhost:8000` dans un navigateur.
-- Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
+- **Run the site**:
 
-#### Linting
+.. code-block:: bash
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `flake8`
+    cd /path/to/Python-OC-Lettings-FR
+    source venv/bin/activate
+    pip install --requirement requirements.txt
+    python manage.py runserver
 
-#### Tests unitaires
+Go to `http://localhost:8000` in a browser.
+Confirm that the site works and can be navigated (you should see multiple profiles and listings).
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pytest`
+- **Linting**:
 
-#### Base de données
+.. code-block:: bash
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- Ouvrir une session shell `sqlite3`
-- Se connecter à la base de données `.open oc-lettings-site.sqlite3`
-- Afficher les tables dans la base de données `.tables`
-- Afficher les colonnes dans le tableau des profils, `pragma table_info(Python-OC-Lettings-FR_profile);`
-- Lancer une requête sur la table des profils, `select user_id, favorite_city from
-  Python-OC-Lettings-FR_profile where favorite_city like 'B%';`
-- `.quit` pour quitter
+    cd /path/to/Python-OC-Lettings-FR
+    source venv/bin/activate
+    flake8
 
-#### Panel d'administration
+- **Unit Tests**:
 
-- Aller sur `http://localhost:8000/admin`
-- Connectez-vous avec l'utilisateur `admin`, mot de passe `Abc1234!`
+.. code-block:: bash
 
-### Windows
+    cd /path/to/Python-OC-Lettings-FR
+    source venv/bin/activate
+    pytest
 
-Utilisation de PowerShell, comme ci-dessus sauf :
+- **Database**:
 
-- Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
-- Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+.. code-block:: bash
+
+    cd /path/to/Python-OC-Lettings-FR
+    sqlite3  # Open a shell session
+    .open oc-lettings-site.sqlite3  # Connect to the database
+    .tables  # Display tables in the database
+    pragma table_info(Python-OC-Lettings-FR_profile);  # Display columns in the profiles table
+    select user_id, favorite_city from Python-OC-Lettings-FR_profile where favorite_city like 'B%';  # Query the profiles table
+    .quit  # Quit the shell
+
+- **Administration Panel**:
+
+Go to `http://localhost:8000/admin`.
+Log in with the user `admin`, password `Abc1234!`.
