@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API interfaces &#8212; OC Project P13  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Deployment and management procedures" href="deployment_and_management_procedures.html" />
+    <link rel="prev" title="Database structure" href="database_structure_and_models.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="api-interfaces">
+<h1>API interfaces<a class="headerlink" href="#api-interfaces" title="Link to this heading">¶</a></h1>
+<p>The web app is structure in 3 Django application.</p>
+<dl class="simple">
+<dt><strong>In lettings</strong>:</dt><dd><ul class="simple">
+<li><p>URL patterns for lettings:</p></li>
+<li><p>/lettings/ maps to the index view function with the name lettings_index.</p></li>
+<li><p>/lettings/&lt;int:letting_id&gt;/ maps to the letting view function with the name letting.</p></li>
+</ul>
+</dd>
+<dt><strong>In profiles</strong>:</dt><dd><ul class="simple">
+<li><p>URL patterns for profiles:</p></li>
+<li><p>/profiles/ maps to the index view function with the name profiles_index.</p></li>
+<li><p>/profiles/&lt;str:username&gt;/ maps to the profile view function with the name profile.</p></li>
+</ul>
+</dd>
+<dt><strong>In oc_lettings_site</strong>:</dt><dd><ul class="simple">
+<li><p>Main URL patterns for the site:</p></li>
+<li><p>Root URL 1 maps to the index view function.</p></li>
+<li><p>Includes URLs from lettings.urls and profiles.urls.</p></li>
+<li><p>/admin/ maps to the Django admin site.</p></li>
+<li><p>/test-500/ maps to a view that raises a 500 error.</p></li>
+<li><p>/sentry-debug/ triggers a division by zero error.</p></li>
+<li><p>Custom error handlers for 404 and 500 errors are specified.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">OC Project P13</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project_description.html">Project Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_instructions.html">Installation Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_started.html">Get started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies_and_languages.html">Technologies and Programming Languages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_structure_and_models.html">Database structure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_and_management_procedures.html">Deployment and management procedures</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="database_structure_and_models.html" title="previous chapter">Database structure</a></li>
+      <li>Next: <a href="deployment_and_management_procedures.html" title="next chapter">Deployment and management procedures</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, th3x4v.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/api_interfaces.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
