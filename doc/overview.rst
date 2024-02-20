@@ -25,9 +25,13 @@ The project focuses on enhancing the existing web application with Web 2.0 featu
 
 The technical documentation covers various aspects of the project, including:
 
+- Overview
 - Project Description
 - Installation Instructions
+- Get started
 - Technologies and Programming Languages
+- Database structure
+- API interfaces
 - Deployment and Application Management Procedures
 
 This documentation serves as a comprehensive resource for understanding and working with the P13_OC_LETTINGS project, promoting effective collaboration and smooth development processes.
