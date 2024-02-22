@@ -8,4 +8,4 @@ The database structure consists of four tables: User, Profile, Address, and Lett
 - The Address table contains details about addresses, including number, street, city, state, zip code, and country ISO code.
 - The Letting table stores letting information with a title and a reference to an address from the Address table.
 
-.. image:: /_static/database_structure.png
+.. image:: ../_static/database_structure.png

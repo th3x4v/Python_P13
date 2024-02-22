@@ -1,4 +1,4 @@
-.. image:: /_static/OC-Lettings.png
+.. image:: ../_static/OC-Lettings.png
    :align: center
 
 
