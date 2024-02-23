@@ -20,7 +20,7 @@ The project focuses on enhancing the existing web application with Web 2.0 featu
 
 - CI/CD Pipeline and Deployment: Establishing a CI/CD pipeline for automated testing, containerization, and deployment to production environments.
 
-2. Technical Documentation ([link](python-p13.readthedocs.io))
+2. Technical Documentation ([link](https://python-p13.readthedocs.io/))
 ---------------------------------------------------------------------------------
 
 The technical documentation covers various aspects of the project, including:
