@@ -35,9 +35,3 @@ def test_handler500(client):
         # Test that the correct template is used
         templates = [t.name for t in response.templates]
         assert "500.html" in templates
-
-
-# def test_handler500(client, urlconf_500_override):
-#     response = client.get("/test-500/")
-#     assert response.status_code == 500
-#     assert "500.html" in (t.name for t in response.templates)
