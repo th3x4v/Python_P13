@@ -32,7 +32,13 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 print(SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+print("Debug1")
+DEBUG_ENV = os.getenv("DEBUG")
+print(DEBUG_ENV)
+print("Debug2")
+print(os.getenv("DEBUG", "False"))
+DEBUG = os.getenv("DEBUG", "True") == "True"
+
 # DEBUG = os.getenv("DEBUG_ENV", True)
 
 print(DEBUG)
