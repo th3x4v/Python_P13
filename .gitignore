@@ -5,3 +5,4 @@ venv
 *.env
 /save_docs
 /staticfiles
+/.venv
