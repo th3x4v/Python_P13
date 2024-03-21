@@ -4,3 +4,4 @@ venv
 .coverage
 *.env
 /save_docs
+/staticfiles
