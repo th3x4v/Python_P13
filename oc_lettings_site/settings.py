@@ -32,6 +32,8 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", True)
+print(DEBUG)
+print("DEBUG")
 
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", f'{os.getenv("DOMAIN_NAME")}']
 
