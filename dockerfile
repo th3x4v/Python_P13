@@ -8,6 +8,7 @@ ENV PYTHONUNBUFFERED 1
 ENV SENTRY_DSN $SENTRY_DSN
 
 
+
 RUN pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
